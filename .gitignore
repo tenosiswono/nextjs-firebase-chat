@@ -1,0 +1,12 @@
+.next
+tmp
+.DS_Store
+npm-debug.log
+.idea
+.vscode
+node_modules
+coverage
+storybook-static
+yarn-error.log
+/.travis/deploy_key
+.firebaserc

@@ -1,0 +1,50 @@
+@import '../core';
+
+@mixin btn-theme($btn-color) {
+  border-color: darken($btn-color, 10%);
+  background-color: $btn-color;
+  &:hover {
+    background-color: lighten($btn-color, 5%);
+  }
+  &:active {
+    background-color: darken($btn-color, 1%)
+  }
+}
+
+.btn {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  padding: .5em 1em;
+  margin: .5em;
+  outline: none;
+  border-radius: .4em;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1em;
+  color: $tint-snow;
+  background: $tint-smoke;
+  box-shadow: $shadow-button;
+  &:disabled {
+    background: $tint-silver;
+    color: $tint-snow;
+    cursor: not-allowed;
+    border-color: $tint-slate;
+    box-shadow: none;
+  }
+  &:hover {
+    box-shadow: $shadow-button;
+  }
+  text: {
+      transform: uppercase;
+      decoration: none;
+      shadow: 0 .063em rgba(0,0,0,.3);
+  }
+}
+
+.btn-primary {
+  @include btn-theme($primary-main);
+}
+.btn-secondary {
+  @include btn-theme($secondary-main);
+}

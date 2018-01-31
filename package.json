@@ -1,0 +1,98 @@
+{
+  "name": "nextjs-firebase-chat",
+  "version": "1.0.0",
+  "description": "amartha chat application",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run lint && node server.js",
+    "build": "next build && node generate-sw.js",
+    "build:report": "npm run build --report && webpack-bundle-analyzer .next/stats.json",
+    "start": "NODE_ENV=production node server.js",
+    "flow": "flow",
+    "lint": "npm run lint:js",
+    "lint:js": "eslint . --ignore-path .gitignore types",
+    "lint:js-fix": "eslint . --ignore-path .gitignore --fix",
+    "lint-staged": "lint-staged",
+    "precommit": "lint-staged"
+  },
+  "pre-commit": "lint-staged",
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix --ignore-path .gitignore",
+      "git add"
+    ]
+  },
+  "now": {
+    "name": "nextjs-firebase-chat",
+    "alias": [
+      "nextjs-firebase-chat.now.sh"
+    ],
+    "env": {
+      "NODE_ENV": "production"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tenosiswono/nextjs-firebase-chat.git"
+  },
+  "keywords": [
+    "amartha",
+    "chat",
+    "reactjs",
+    "firebase",
+    "nextjs"
+  ],
+  "author": "teno siswono",
+  "bugs": {
+    "url": "https://github.com/tenosiswono/nextjs-firebase-chat/issues"
+  },
+  "homepage": "https://github.com/tenosiswono/nextjs-firebase-chat#readme",
+  "dependencies": {
+    "autoprefixer": "^7.2.5",
+    "babel-plugin-module-resolver": "^3.0.0",
+    "babel-plugin-wrap-in-js": "^1.1.1",
+    "body-parser": "^1.18.2",
+    "css-loader": "^0.28.9",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "firebase": "^4.9.0",
+    "firebase-admin": "^5.8.1",
+    "glob": "^7.1.2",
+    "isomorphic-fetch": "^2.2.1",
+    "loglevel": "^1.6.1",
+    "next": "^4.2.3",
+    "next-redux-saga": "^1.0.1",
+    "next-redux-wrapper": "^1.3.5",
+    "node-sass": "^4.7.2",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-loader": "^2.0.10",
+    "raw-loader": "^0.5.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-saga": "^0.16.0",
+    "reselect": "^3.0.1",
+    "sass-loader": "^6.0.6",
+    "seamless-immutable": "^7.1.2",
+    "session-file-store": "^1.2.0",
+    "webpack-bundle-analyzer": "^2.9.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "eslint": "^4.15.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-config-standard-jsx": "^4.0.2",
+    "eslint-config-standard-react": "^5.0.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.5.1",
+    "eslint-plugin-standard": "^3.0.1",
+    "flow-bin": "^0.63.1",
+    "lint-staged": "^6.0.1"
+  }
+}

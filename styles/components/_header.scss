@@ -1,0 +1,65 @@
+@import '../core';
+
+.header {
+  position: absolute;
+  width: 100%;
+  margin-top: 16px;
+  z-index: 1101;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px;
+  top: 0;
+  left: auto;
+  margin: 0 auto;
+  right: 0;
+  background-color: $tint-steel;
+  box-shadow: $shadow-nav-bar;
+}
+
+.logo {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  margin: 0 16px;
+}
+
+.logo span {
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: .15em;
+  color: #fff;
+  font-size: 1.1em;
+}
+
+nav button {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: .85em;
+  letter-spacing: .2em;
+  display: inline-block;
+  opacity: .8;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+nav .sign-in-nav {
+  display: flex;
+}
+
+.profile-img {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+@media (min-width: 48rem) {
+  .header {
+    padding:0 4vw;
+    width: calc(100% - 8vw);
+  }
+}
